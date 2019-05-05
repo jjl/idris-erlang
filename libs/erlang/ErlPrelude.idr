@@ -77,8 +77,11 @@ namespace Erl
                               pure (EHandle p)
     where modeStr : Mode -> String
           modeStr Read = "r"
-          modeStr Write = "w"
+          modeStr WriteTruncate = "w"
+          modeStr Append = "w"
           modeStr ReadWrite = "rw"
+          modeStr ReadWriteTruncate = "rw"
+          modeStr ReadAppend = "rw"
 
           open : String -> String -> EIO Ptr
           open = foreign FFI_Erl "idris_erlang_rts:file_open" (String -> String -> EIO Ptr)
