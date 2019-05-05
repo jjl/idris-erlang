@@ -209,7 +209,7 @@ generateExport (ExportFun fn (FStr enm) ret args) = do liftIO . putStrLn $ erlAt
 
 
 generateExp :: DExp -> ErlCG String
-generateExp (DV lv)            = getVar lv
+generateExp (DV name)            = pure $ erlVar name
 
 generateExp (DApp _ name exprs)  = do res <- isRecord name (length exprs)
                                       exprs' <- mapM generateExp exprs

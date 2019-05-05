@@ -5,6 +5,7 @@ import Idris.Core.TT
 import Idris.ElabDecls
 import Idris.Main
 import Idris.ModeCommon
+import Idris.Options
 import Idris.REPL
 
 import IRTS.Compiler
